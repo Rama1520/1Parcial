@@ -10,10 +10,15 @@ namespace Parcial
     {
         private List<Documento> documentos = new List<Documento>();
         public string Locacion { get; private set; }
-
-        public Escaner(string tipoDocumento)
+        public string Marca {get; private set; }
+        public enum TipoDoc
         {
-            Locacion = tipoDocumento == "mapa" ? "mapoteca" : "procesosTecnicos";
+            libro,
+            mapa
+        }
+        public Escaner(string marca, TipoDoc tipoDocumento)
+        {
+            Locacion = tipoDocumento.ToString() == "mapa" ? "mapoteca" : "procesosTecnicos";
         }
 
         public static bool operator ==(Escaner e, Documento d)
@@ -32,8 +37,9 @@ namespace Parcial
             {
                 d.AvanzarEstado();
                 e.documentos.Add(d);
+                return true;
             }
-            return e;
+            return false;
         }
 
         public bool CambiarEstadoDocumento(Documento d)

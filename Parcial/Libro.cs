@@ -11,11 +11,12 @@ namespace Parcial
         public string ISBN { get; set; }
         public string Barcode { get; set; }
         public int Paginas { get; set; }
+       
 
         protected override string NumNormalizado => ISBN;
 
-        public Libro(string titulo, string autor, string isbn, string barcode, int paginas)
-            : base(titulo, autor)
+        public Libro(string titulo, string autor,int anio, string isbn, string barcode, int paginas)
+            : base(titulo, autor, anio)
         {
             ISBN = isbn;
             Barcode = barcode;

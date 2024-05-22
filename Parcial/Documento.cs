@@ -10,11 +10,13 @@ namespace Parcial
     {
         public string Titulo { get; set; }
         public string Autor { get; set; }
-        public string Estado { get; private set; } = "Inicio";
+        public int Anio { get; set; }
+        public string Estado { get; set; } = "Inicio";
         protected abstract string NumNormalizado { get; }
 
-        public Documento(string titulo, string autor)
+        public Documento(string titulo, string autor, int anio)
         {
+            Anio = anio;
             Titulo = titulo;
             Autor = autor;
         }

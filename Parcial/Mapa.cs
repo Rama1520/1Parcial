@@ -12,13 +12,12 @@ namespace Parcial
         public int Anio { get; set; }
         public double Alto { get; set; }
         public double Ancho { get; set; }
-
         public double Superficie => Alto * Ancho;
 
         protected override string NumNormalizado => null;
 
-        public Mapa(string titulo, string autor, string barcode, int anio, double alto, double ancho)
-            : base(titulo, autor)
+        public Mapa(string titulo, string autor, int anio, string numNormalizado, string barcode, double alto, double ancho)
+            : base(titulo, autor, anio)
         {
             Barcode = barcode;
             Anio = anio;
